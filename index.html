@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Vamaro Tour and Travel – Journeys that stay with you</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0b3a5a;
+            --navy2: #082b44;
+            --gold: #e8a317;
+            --cream: #f6f4ee;
+            --ink: #1b2b3a;
+            --mut: #6b7a88;
+            --line: #e4e1d8;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top, 0px);
+            padding-bottom: env(safe-area-inset-bottom, 0px);
+            color-scheme: light
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: env(safe-area-inset-top, 0px)
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: Inter, system-ui, sans-serif;
+            background: var(--cream);
+            color: var(--ink);
+            line-height: 1.5;
+            overflow-x: hidden
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: Fraunces, Georgia, serif;
+            color: var(--navy);
+            font-weight: 600
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .eye {
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 10px
+        }
+
+        .sec {
+            padding: 72px 0
+        }
+
+        .sec h2 {
+            text-align: center;
+            font-size: clamp(26px, 3.4vw, 36px)
+        }
+
+        .sub {
+            text-align: center;
+            color: var(--mut);
+            font-size: 14px;
+            margin: 10px auto 36px;
+            max-width: 520px
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #fff;
+            font-weight: 600;
+            font-size: 13px;
+            padding: 11px 24px;
+            border-radius: 999px;
+            border: 0;
+            cursor: pointer;
+            transition: .3s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(232, 163, 23, .4)
+        }
+
+        .lnk {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 12px
+        }
+
+        /* image slots */
+        .ph {
+            position: relative;
+            background: linear-gradient(135deg, #dde8ea, #c9dadd);
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            transition: transform .6s
+        }
+
+        .ph span {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            font-size: 11px;
+            color: #5b7480;
+            opacity: 0;
+            transition: .3s;
+            background: rgba(255, 255, 255, .35)
+        }
+
+        .ph:hover span {
+            opacity: 1
+        }
+
+        .ph.has span {
+            display: none
+        }
+
+        .t2 {
+            background: linear-gradient(135deg, #d9e7e6, #e7dcc0)
+        }
+
+        .t3 {
+            background: linear-gradient(135deg, #cfe3e6, #b9d1d5)
+        }
+
+        .t4 {
+            background: linear-gradient(135deg, #e6d9b8, #cfdcd9)
+        }
+
+        .lg {
+            display: block;
+            background: #fff;
+            border-radius: 10px;
+            padding: 3px;
+            width: auto
+        }
+
+        .logo .lg {
+            height: 58px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+            transition: .3s
+        }
+
+        .logo .lg:hover {
+            transform: scale(1.05)
+        }
+
+        .flogo {
+            height: 84px;
+            margin-bottom: 12px
+        }
+
+        /* nav */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 5;
+            padding: 18px 0
+        }
+
+        nav .wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: .14em;
+            font-size: 14px
+        }
+
+        .mark {
+            width: 26px;
+            height: 26px;
+            border-radius: 7px;
+            background: var(--gold);
+            display: grid;
+            place-items: center;
+            color: var(--navy);
+            font-size: 14px
+        }
+
+        .menu {
+            display: flex;
+            gap: 26px;
+            font-size: 11px;
+            color: #e9eef2;
+            align-items: center
+        }
+
+        .menu a {
+            opacity: .85;
+            transition: .2s
+        }
+
+        .menu a:hover {
+            opacity: 1;
+            color: var(--gold)
+        }
+
+        /* hero */
+        .hero {
+            position: relative;
+            min-height: 600px;
+            background: #0d2c40;
+            color: #fff;
+            /* overflow: hidden; */
+            padding: 130px 0 120px
+        }
+
+        .hero .bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background: linear-gradient(120deg, #0a2638, #143e55 60%, #0d2c40)
+        }
+
+        .hero .bg::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(6, 24, 38, .85), rgba(6, 24, 38, .35))
+        }
+
+        .hero .wrap {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1.1fr 1.2fr;
+            gap: 40px;
+            align-items: center
+        }
+
+        .wm {
+            position: absolute;
+            left: 24px;
+            top: -10px;
+            font-family: Fraunces, serif;
+            font-size: 90px;
+            font-weight: 700;
+            color: rgba(255, 255, 255, .07);
+            letter-spacing: .04em
+        }
+
+        .hero .eye {
+            text-align: left;
+            margin-bottom: 16px
+        }
+
+        .hero h1 {
+            color: #fff;
+            font-size: clamp(34px, 5vw, 54px);
+            line-height: 1.08;
+            margin-bottom: 18px
+        }
+
+        .hero h1 em {
+            color: var(--gold);
+            font-style: normal;
+            display: block
+        }
+
+        .hero p {
+            font-size: 13px;
+            color: #d3dde4;
+            max-width: 380px;
+            margin-bottom: 24px
+        }
+
+        .hbtn {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .ghost {
+            color: #fff;
+            font-size: 12px;
+            border: 1px solid rgba(255, 255, 255, .4);
+            padding: 10px 20px;
+            border-radius: 999px;
+            transition: .3s
+        }
+
+        .ghost:hover {
+            background: rgba(255, 255, 255, .12)
+        }
+
+        .hc {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            align-items: end
+        }
+
+        .hc article {
+            background: rgba(255, 255, 255, .95);
+            border-radius: 14px;
+            padding: 8px;
+            color: var(--ink);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
+            animation: fl 6s ease-in-out infinite
+        }
+
+        .hc article:nth-child(2) {
+            animation-delay: -2s;
+            transform: translateY(-14px)
+        }
+
+        .hc article:nth-child(3) {
+            animation-delay: -4s
+        }
+
+        .hc .ph {
+            height: 150px;
+            border-radius: 10px;
+            margin-bottom: 8px
+        }
+
+        .hc article:nth-child(2) .ph {
+            height: 190px
+        }
+
+        .hc h3 {
+            font-size: 15px;
+            padding: 0 4px
+        }
+
+        .hc p {
+            font-size: 9.5px;
+            color: var(--mut);
+            margin: 4px;
+            max-width: none
+        }
+
+        .hc a {
+            font-size: 10px;
+            font-weight: 600;
+            background: var(--navy);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 6px;
+            display: inline-block;
+            margin: 2px 4px 4px
+        }
+
+        @keyframes fl {
+
+            0%,
+            100% {
+                translate: 0 0
+            }
+
+            50% {
+                translate: 0 -8px
+            }
+        }
+
+        .search {
+            position: absolute;
+            left: 50%;
+            bottom: -26px;
+            transform: translateX(-50%);
+            width: min(1000px, calc(100% - 48px));
+            background: #fff;
+            border-radius: 14px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr auto;
+            box-shadow: 0 18px 44px rgba(10, 40, 60, .18);
+            z-index: 4;
+            padding: 10px;
+            gap: 6px
+        }
+
+        .search div {
+            padding: 8px 16px;
+            border-right: 1px solid var(--line)
+        }
+
+        .search label {
+            font-size: 8.5px;
+            letter-spacing: .14em;
+            color: var(--gold);
+            font-weight: 700;
+            display: block
+        }
+
+        .search select,
+        .search input {
+            border: 0;
+            outline: 0;
+            background: none;
+            font: 500 12px Inter;
+            color: var(--ink);
+            width: 100%;
+            margin-top: 3px
+        }
+
+        .search .btn {
+            border-radius: 10px;
+            background: var(--navy);
+            align-self: stretch;
+            padding: 0 28px
+        }
+
+        .search .btn:hover {
+            box-shadow: 0 8px 20px rgba(11, 58, 90, .35)
+        }
+
+        .intro {
+            padding-top: 110px
+        }
+
+        /* intro */
+        .two {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 44px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto
+        }
+
+        .two .ph {
+            height: 240px;
+            border-radius: 12px
+        }
+
+        .two h3 {
+            font-size: 26px;
+            margin: 6px 0 10px
+        }
+
+        .two p {
+            font-size: 12.5px;
+            color: var(--mut);
+            margin-bottom: 14px
+        }
+
+        .two li {
+            list-style: none;
+            font-size: 12px;
+            margin: 7px 0;
+            display: flex;
+            gap: 9px;
+            align-items: center
+        }
+
+        .two li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: 700
+        }
+
+        .mini {
+            font-size: 9px;
+            letter-spacing: .16em;
+            color: var(--gold);
+            font-weight: 700;
+            text-transform: uppercase
+        }
+
+        .band {
+            background: #fff
+        }
+
+        .g4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px
+        }
+
+        .g3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .fc {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 20px;
+            transition: .35s
+        }
+
+        .fc:hover,
+        .card:hover,
+        .ic:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 34px rgba(11, 58, 90, .12)
+        }
+
+        .ico {
+            width: 30px;
+            height: 30px;
+            border-radius: 9px;
+            background: #fdf1d2;
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+            margin-bottom: 12px
+        }
+
+        .fc h3,
+        .ic h3 {
+            font-size: 14px;
+            margin-bottom: 6px
+        }
+
+        .fc p,
+        .ic p {
+            font-size: 11px;
+            color: var(--mut)
+        }
+
+        /* cards */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            transition: .35s
+        }
+
+        .card .ph {
+            height: 150px
+        }
+
+        .card:hover .ph,
+        .st:hover .ph,
+        .ds:hover .ph {
+            transform: scale(1.07)
+        }
+
+        .card .im {
+            position: relative;
+            overflow: hidden
+        }
+
+        .tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+            background: rgba(255, 255, 255, .9);
+            font-size: 9px;
+            padding: 3px 9px;
+            border-radius: 99px;
+            color: var(--navy);
+            font-weight: 600
+        }
+
+        .card .bd {
+            padding: 14px 16px
+        }
+
+        .card h3 {
+            font-size: 15px
+        }
+
+        .card p {
+            font-size: 10.5px;
+            color: var(--mut);
+            margin: 4px 0 10px
+        }
+
+        .card .ft {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 10px;
+            color: var(--mut)
+        }
+
+        .st {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            height: 135px;
+            background: #fff;
+            border: 1px solid var(--line)
+        }
+
+        .ds {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            display: block;
+            height: 105px;
+            background: #fff;
+            border: 1px solid var(--line)
+        }
+
+        .st .ph {
+            position: absolute;
+            inset: 0
+        }
+
+        .st b,
+        .st small {
+            position: relative;
+            z-index: 2;
+            display: block
+        }
+
+        .st .lab {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 2;
+            padding: 10px 14px;
+            background: linear-gradient(transparent, rgba(8, 43, 68, .8));
+            color: #fff
+        }
+
+        .st b {
+            font-family: Fraunces, serif;
+            font-size: 13px
+        }
+
+        .st small {
+            font-size: 9px;
+            opacity: .85
+        }
+
+        .g4.d .ds {
+            height: 170px
+        }
+
+        .ds .lab {
+            padding: 12px
+        }
+
+        .ex {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px
+        }
+
+        .ex div.ph {
+            border-radius: 12px;
+            height: 130px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer
+        }
+
+        .ex .ph {
+            position: absolute;
+            inset: 0
+        }
+
+        .ex b,
+        .ex small {
+            position: relative;
+            z-index: 2;
+            pointer-events: none
+        }
+
+        .ex b {
+            font-family: Fraunces, serif;
+            font-size: 14px;
+            /* color: var(--navy) */
+        }
+
+        .ex-con {
+            display: flex;
+            flex-direction: column;
+            background: rgb(0, 0, 0, .3);
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            left: 0;
+            padding: 10px;
+            width: 100%;
+            color: #fff;
+            border-radius: 0 0 10px 10px;
+        }
+
+        #ex.ex>div {
+            position: relative;
+        }
+
+        .ex small {
+            font-size: 10px;
+            /* color: #4a5d6b */
+        }
+
+        .ex div:nth-child(1) .ph {
+            background-color: #b9dcd8
+        }
+
+        .ex div:nth-child(2) .ph {
+            background: #c8dbe0
+        }
+
+        .ex div:nth-child(3) .ph {
+            background: #e3c789
+        }
+
+        .ex div:nth-child(4) .ph {
+            background: #93b9a5
+        }
+
+        /* cta */
+        .cta {
+            background: var(--navy2);
+            border-radius: 16px;
+            padding: 44px 48px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            margin: 0 auto;
+            max-width: 1000px
+        }
+
+        .cta h2 {
+            text-align: left;
+            color: #fff;
+            font-size: 28px;
+            max-width: 360px
+        }
+
+        .cta h2 em {
+            color: var(--gold);
+            font-style: normal;
+            display: block
+        }
+
+        .cta p {
+            font-size: 12px;
+            color: #b9c9d4;
+            margin: 10px 0 20px;
+            max-width: 360px
+        }
+
+        .rings {
+            position: absolute;
+            right: -60px;
+            top: 50%;
+            translate: 0 -50%;
+            width: 300px;
+            height: 300px
+        }
+
+        .rings i {
+            position: absolute;
+            border-radius: 50%;
+            inset: 0;
+            border: 1px solid rgba(255, 255, 255, .15);
+            animation: pu 5s ease-in-out infinite
+        }
+
+        .rings i:nth-child(2) {
+            inset: 50px;
+            background: #0f4a6f;
+            animation-delay: -1.5s
+        }
+
+        .rings i:nth-child(3) {
+            inset: 100px;
+            background: #0b5f8a;
+            animation-delay: -3s
+        }
+
+        @keyframes pu {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.07)
+            }
+        }
+
+        .ic {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 18px 20px;
+            transition: .35s
+        }
+
+        .ic a {
+            font-size: 10px;
+            color: var(--gold);
+            font-weight: 600
+        }
+
+        .tm {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 18px;
+            transition: .35s
+        }
+
+        .tm:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 34px rgba(11, 58, 90, .12)
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 11px;
+            letter-spacing: 2px
+        }
+
+        .tm p {
+            font-size: 11.5px;
+            margin: 10px 0 16px;
+            color: #44586a
+        }
+
+        .who {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 600
+        }
+
+        .who i {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #cfe0e4;
+            display: block
+        }
+
+        .who small {
+            display: block;
+            color: var(--mut);
+            font-weight: 400;
+            font-size: 9px
+        }
+
+        .nl {
+            text-align: center;
+            padding: 70px 0
+        }
+
+        .nl form {
+            display: flex;
+            max-width: 430px;
+            margin: 20px auto 0;
+            background: #fff;
+            border-radius: 99px;
+            padding: 5px;
+            border: 1px solid var(--line)
+        }
+
+        .nl input {
+            flex: 1;
+            border: 0;
+            outline: 0;
+            padding: 0 16px;
+            font: 12px Inter;
+            background: none
+        }
+
+        .nl .btn {
+            background: var(--navy);
+            padding: 10px 22px
+        }
+
+        footer {
+            background: var(--navy2);
+            color: #c3d1db;
+            padding: 46px 0 22px;
+            font-size: 11.5px
+        }
+
+        .fg {
+            display: grid;
+            grid-template-columns: 1.6fr 1fr 1fr 1fr;
+            gap: 30px
+        }
+
+        footer .ph {
+            width: 62px;
+            height: 62px;
+            border-radius: 8px;
+            margin-bottom: 10px
+        }
+
+        footer h4 {
+            font-size: 9.5px;
+            letter-spacing: .16em;
+            color: var(--gold);
+            margin-bottom: 12px
+        }
+
+        footer li {
+            list-style: none;
+            margin: 7px 0
+        }
+
+        footer li a:hover {
+            color: #fff
+        }
+
+        .fb {
+            border-top: 1px solid rgba(255, 255, 255, .12);
+            margin-top: 30px;
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            opacity: .75
+        }
+
+        /* reveal */
+        .rv {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity .8s, transform .8s
+        }
+
+        .rv.in {
+            opacity: 1;
+            transform: none
+        }
+
+        .mges img {
+            width: 100%;
+        }
+
+        .hero .wrap>div:first-child>* {
+            animation: up .9s both
+        }
+
+        .hero .wrap>div:first-child>*:nth-child(2) {
+            animation-delay: .15s
+        }
+
+        .hero .wrap>div:first-child>*:nth-child(3) {
+            animation-delay: .3s
+        }
+
+        .hero .wrap>div:first-child>*:nth-child(4) {
+            animation-delay: .45s
+        }
+
+        @keyframes up {
+            from {
+                opacity: 0;
+                transform: translateY(26px)
+            }
+        }
+
+        @media(max-width:860px) {
+            .menu a:not(.btn) {
+                display: none
+            }
+
+            .hero .wrap,
+            .two,
+            .fg {
+                grid-template-columns: 1fr
+            }
+
+            .g4,
+            .ex {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .g3 {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .search {
+                grid-template-columns: 1fr 1fr;
+                position: relative;
+                left: 0;
+                bottom: -70px;
+                transform: none;
+                margin: 0 auto
+            }
+
+            .hero {
+                padding-bottom: 60px
+            }
+
+            .intro {
+                padding-top: 130px
+            }
+
+            .hc article:nth-child(2) {
+                transform: none
+            }
+
+            .cta {
+                padding: 32px 24px
+            }
+
+            .rings {
+                opacity: .3
+            }
+        }
+
+        @media(max-width:560px) {
+
+            .g3,
+            .g4,
+            .ex {
+                grid-template-columns: 1fr
+            }
+
+            .hc {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .hc article:nth-child(3) {
+                display: none
+            }
+
+            .wm {
+                font-size: 56px
+            }
+
+            .fb {
+                flex-direction: column;
+                gap: 6px
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            * {
+                animation: none !important;
+                transition: none !important
+            }
+
+            .rv {
+                opacity: 1;
+                transform: none
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="hero">
+        <div class="ph bg" style="pointer-events:none"></div>
+        <nav>
+            <div class="wrap"><a class="logo" href="#"><img class="lg" alt="Vamaro Tour and Travel – Hill to Sea"></a>
+                <div class="menu"><a href="#">Home</a><a href="#tours">Tours</a><a href="#dest">Destinations</a><a
+                        href="#exp">Experiences</a><a href="#info">Travel Info</a><a href="#stories">Stories</a><a
+                        class="btn" href="#plan" style="padding:8px 18px;font-size:11px">Plan a Trip</a></div>
+            </div>
+        </nav>
+        <div class="wrap"><span class="wm">EXPLORE</span>
+            <div>
+                <div class="eye">Discover India – Your Way</div>
+                <h1>Journeys that <em>stay with you.</em></h1>
+                <p>From the Himalayas to the monsoon, explore India with thoughtfully planned journeys and warm local
+                    expertise — across its most beautiful destinations.</p>
+                <div class="hbtn"><a class="btn" href="#tours">Explore Tours</a><a class="ghost" href="#plan">Plan My
+                        Trip</a></div>
+            </div>
+            <div class="hc">
+                <article>
+                    <div class="ph mges"><img src="01.webp"></div>
+                    <h3>Munnar</h3>
+                    <p>High hills, tea gardens and misty mornings in Kerala.</p><a href="#">Read More</a>
+                </article>
+                <article>
+                    <div class="ph t2 mges"><img src="02.webp"></div>
+                    <h3>Thrissur</h3>
+                    <p>Thrissur is known as one of the largest temple festival towns, rich in culture and traditions.
+                    </p><a href="#">Read More</a>
+                </article>
+                <article>
+                    <div class="ph t3 mges"><img src="03.jpeg"></div>
+                    <h3>Alappuzha</h3>
+                    <p>Lazy backwaters, palm-fringed canals and houseboats.</p><a href="#">Read More</a>
+                </article>
+            </div>
+        </div>
+        <form class="search" onsubmit="return false">
+            <div><label>TRIP TYPE</label><select>
+                    <option>Choose trip type</option>
+                    <option>Culture</option>
+                    <option>Wildlife</option>
+                    <option>Beach</option>
+                </select></div>
+            <div><label>DESTINATION</label><input placeholder="Where do you want to go?"></div>
+            <div><label>DURATION</label><select>
+                    <option>Select trip duration</option>
+                    <option>3–5 days</option>
+                    <option>6–9 days</option>
+                    <option>10+ days</option>
+                </select></div><button class="btn">Search Now</button>
+        </form>
+    </header>
+
+    <section class="sec intro">
+        <div class="wrap rv">
+            <div class="eye">A Land of Many Faces</div>
+            <h2>India is a world of its own</h2>
+            <p class="sub">A land of stories, colours and unforgettable moments — brought closer by Vamaro.</p>
+            <div class="two">
+                <div class="ph t2 mges" style="border-radius:12px"><img src="05.jpeg"></div>
+                <div>
+                    <div class="mini">Every journey tells a story</div>
+                    <h3>Every journey has a story.</h3>
+                    <p>We bring together inspiring places, thoughtful planning and warm local experiences to meaningful
+                        journeys.</p>
+                    <ul>
+                        <li>Handpicked destinations</li>
+                        <li>Personalised itineraries</li>
+                        <li>Trusted local guides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec band">
+        <div class="wrap rv">
+            <div class="eye">Why Choose Vamaro</div>
+            <h2>Travel with confidence</h2>
+            <p class="sub">The details are taken care of, so you enjoy the journey.</p>
+            <div class="g4" id="why">
+                <div class="fc">
+                    <div class="ico">🧭</div>
+                    <h3>Thoughtful planning</h3>
+                    <p>Every itinerary is built around your pace and interests.</p>
+                </div>
+                <div class="fc">
+                    <div class="ico">🌿</div>
+                    <h3>Local knowledge</h3>
+                    <p>Guides and hosts who know each place by heart.</p>
+                </div>
+                <div class="fc">
+                    <div class="ico">🤝</div>
+                    <h3>Personal attention</h3>
+                    <p>One travel expert, from first call to your return.</p>
+                </div>
+                <div class="fc">
+                    <div class="ico">✅</div>
+                    <h3>Reliable coordination</h3>
+                    <p>Stays, transfers and activities handled smoothly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec" id="tours">
+        <div class="wrap rv">
+            <div class="eye">Handpicked Journeys</div>
+            <h2>Our popular tour packages</h2>
+            <p class="sub">Itineraries crafted around India’s most loved destinations.</p>
+            <div class="g3" id="pk">
+                <div class="card">
+                    <div class="im"><span class="tag">Culture</span>
+                        <div class="ph mges"><img src="05.jpeg"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Golden Triangle</h3>
+                        <p>Delhi · Agra · Jaipur</p>
+                        <div class="ft"><span>7 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="im"><span class="tag">Nature</span>
+                        <div class="ph t2 mges"><img src="06.webp"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Kerala Backwaters</h3>
+                        <p>Kochi · Munnar · Alleppey</p>
+                        <div class="ft"><span>8 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="im"><span class="tag">Heritage</span>
+                        <div class="ph t3 mges"><img src="07.webp"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Royal Rajasthan</h3>
+                        <p>Jaipur · Udaipur · Jodhpur</p>
+                        <div class="ft"><span>9 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="im"><span class="tag">Adventure</span>
+                        <div class="ph t4 mges"><img src="08.webp"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Himalayan Escape</h3>
+                        <p>Manali · Shimla · Kasol</p>
+                        <div class="ft"><span>7 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="im"><span class="tag">Wildlife</span>
+                        <div class="ph mges"><img src="09.jpg"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Wildlife Trails</h3>
+                        <p>Kaziranga · Ranthambore</p>
+                        <div class="ft"><span>6 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="im"><span class="tag">Beach</span>
+                        <div class="ph t2 mges"><img src="10.jpg"></div>
+                    </div>
+                    <div class="bd">
+                        <h3>Goa Getaway</h3>
+                        <p>North Goa · South Goa</p>
+                        <div class="ft"><span>5 Days</span><a class="lnk" href="#">Inquire →</a></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec band">
+        <div class="wrap rv">
+            <div class="eye">Find Your Kind of Journey</div>
+            <h2>Explore by travel style</h2>
+            <p class="sub">Pick what excites you and we’ll shape the rest around it.</p>
+            <div class="g3" id="sty"><a class="st" href="#">
+                    <div class="ph t2 mges"><img src="11.webp"></div>
+                    <div class="lab"><b>Culture &amp; Heritage</b><small>Palaces, forts and living traditions</small>
+                    </div>
+                </a><a class="st" href="#">
+                    <div class="ph t3 mges"><img src="12.jpg"></div>
+                    <div class="lab"><b>Wildlife &amp; Adventure</b><small>Safaris, treks and wild landscapes</small>
+                    </div>
+                </a><a class="st" href="#">
+                    <div class="ph t4 mges"><img src="13.jpg"></div>
+                    <div class="lab"><b>Spiritual Journeys</b><small>Temples, ghats and sacred places</small></div>
+                </a><a class="st" href="#">
+                    <div class="ph mges"><img src="14.jpg"></div>
+                    <div class="lab"><b>Wellness &amp; Ayurveda</b><small>Rest, rejuvenate and restore</small></div>
+                </a><a class="st" href="#">
+                    <div class="ph t2 mges"><img src="15.webp"></div>
+                    <div class="lab"><b>Family Holidays</b><small>Easy trips everyone will enjoy</small></div>
+                </a><a class="st" href="#">
+                    <div class="ph t3 mges"><img src="16.webp"></div>
+                    <div class="lab"><b>Beach &amp; Backwaters</b><small>Coast, lagoons and slow days</small></div>
+                </a></div>
+        </div>
+    </section>
+    <section class="sec" id="dest">
+        <div class="wrap rv">
+            <div class="eye">A Country of Many Worlds</div>
+            <h2>Explore India’s destinations</h2>
+            <p class="sub">A few places to begin your next great story.</p>
+            <div class="g4 d" id="ds"><a class="st ds" href="#">
+                    <div class="ph mges"><img src="17.webp"></div>
+                    <div class="lab"><b>Kerala</b><small>Backwaters &amp; green hills</small></div>
+                </a><a class="st ds" href="#">
+                    <div class="ph t2 mges"><img src="18.jpg"></div>
+                    <div class="lab"><b>Rajasthan</b><small>Forts, palaces &amp; deserts</small></div>
+                </a><a class="st ds" href="#">
+                    <div class="ph t3 mges"><img src="08.webp"></div>
+                    <div class="lab"><b>Himachal</b><small>Mountains &amp; valleys</small></div>
+                </a><a class="st ds" href="#">
+                    <div class="ph t4 mges"><img src="16.webp"> </div>
+                    <div class="lab"><b>Goa</b><small>Beaches &amp; heritage</small></div>
+                </a></div>
+        </div>
+    </section>
+    <section class="sec band" id="exp">
+        <div class="wrap rv">
+            <div class="eye">Made of Moments</div>
+            <h2>Experiences to remember</h2>
+            <p class="sub">Go beyond sightseeing and connect with the spirit of each place.</p>
+            <div class="ex" id="ex">
+                <div>
+                    <div class="ph mges"><img src="17.webp"></div>
+                    <div class="ex-con"><b>Houseboat cruising</b><small>Drift through
+                            Kerala’s canals</small></div>
+                </div>
+                <div>
+                    <div class="ph mges"><img src="18.jpg"></div>
+                    <div class="ex-con"><b>Tea garden walks</b><small>Misty trails in the
+                            hills</small></div>
+                </div>
+                <div>
+                    <div class="ph mges"><img src="19.jpeg"></div>
+                    <div class="ex-con"><b>Heritage trails</b><small>Walk through living
+                            history</small></div>
+                </div>
+                <div>
+                    <div class="ph mges"><img src="08.webp"></div>
+                    <div class="ex-con"><b>Wildlife safaris</b><small>Meet India’s wild
+                            side</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec" id="plan">
+        <div class="wrap rv">
+            <div class="cta">
+                <div class="mini">Your Trip, Your Way</div>
+                <h2>Let’s plan something <em>unforgettable.</em></h2>
+                <p>Tell us what inspires you. We’ll help shape the journey.</p><a class="btn" href="#">Start
+                    Planning</a>
+                <div class="rings"><i></i><i></i><i></i></div>
+            </div>
+        </div>
+    </section>
+    <section class="sec band" id="info" style="padding-top:60px">
+        <div class="wrap rv">
+            <div class="eye">Plan Smarter</div>
+            <h2>Useful travel information</h2>
+            <p class="sub">Helpful guidance to make planning your India journey easier.</p>
+            <div class="g3" id="inf">
+                <div class="ic">
+                    <h3>Visa information</h3>
+                    <p style="margin-bottom:10px">Understand visa types and the application steps.</p><a href="#">READ
+                        MORE →</a>
+                </div>
+                <div class="ic">
+                    <h3>Before you travel</h3>
+                    <p style="margin-bottom:10px">Packing, health and best-season guidance.</p><a href="#">READ MORE
+                        →</a>
+                </div>
+                <div class="ic">
+                    <h3>Travel assistance</h3>
+                    <p style="margin-bottom:10px">Support and local help throughout your trip.</p><a href="#">READ MORE
+                        →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec" id="stories">
+        <div class="wrap rv">
+            <div class="eye">Kind Words From Travellers</div>
+            <h2>Stories that stay with us</h2>
+            <p class="sub">A little feedback from the people who travelled with us.</p>
+            <div class="g3" id="tm">
+                <div class="tm">
+                    <div class="stars">★★★★★</div>
+                    <p>Everything was planned with care. A truly easy trip.</p>
+                    <div class="who"><i></i>
+                        <div>Traveller name<small>Kerala</small></div>
+                    </div>
+                </div>
+                <div class="tm">
+                    <div class="stars">★★★★★</div>
+                    <p>Amazing guides and beautifully chosen stays.</p>
+                    <div class="who"><i></i>
+                        <div>Traveller name<small>Rajasthan</small></div>
+                    </div>
+                </div>
+                <div class="tm">
+                    <div class="stars">★★★★★</div>
+                    <p>Helpful, friendly and always on time. Highly recommended.</p>
+                    <div class="who"><i></i>
+                        <div>Traveller name<small>Himachal</small></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="nl">
+        <div class="wrap rv">
+            <div class="eye">Travel Notes For Your Inbox</div>
+            <h2 style="font-size:28px">Stay inspired. Keep exploring.</h2>
+            <p class="sub" style="margin-bottom:0">Get travel ideas, destination stories and special updates.</p>
+            <form onsubmit="this.reset();return false"><input type="email" placeholder="Enter your email address"
+                    required><button class="btn">Subscribe</button></form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <div class="fg">
+                <div><img class="lg flogo" alt="Vamaro Tour and Travel"><b
+                        style="color:#fff;font-size:13px;letter-spacing:.08em">VAMARO TOUR AND TRAVEL</b>
+                    <p style="margin-top:8px;max-width:240px;font-size:11px">Journeys designed around you — from
+                        Himalayas to backwaters.</p>
+                </div>
+                <div>
+                    <h4>EXPLORE</h4>
+                    <ul>
+                        <li><a href="#">Domestic tours</a></li>
+                        <li><a href="#">International tours</a></li>
+                        <li><a href="#">Travel styles</a></li>
+                        <li><a href="#">Travel tips</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>COMPANY</h4>
+                    <ul>
+                        <li><a href="#">About Vamaro</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Travel articles</a></li>
+                        <li><a href="#">Visa help</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>GET IN TOUCH</h4>
+                    <ul>
+                        <li><a href="#">Call / WhatsApp</a></li>
+                        <li><a href="#">Email us</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Social media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fb"><span>© 2026 Vamaro Tour and Travel. All rights reserved.</span><span>Privacy · Terms ·
+                    Instagram · Facebook</span></div>
+        </div>
+    </footer>
+
+    <script>
+        const ph = (c = '') => `<div class="ph ${c}"><span>Upload image</span></div>`, T = ['', 't2', 't3', 't4'];
+        const put = (id, a, f) => document.getElementById(id).innerHTML = a.map(f).join('');
+        const LOGO = 'data:image/webp;base64,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'; document.querySelectorAll('.lg').forEach(i => i.src = LOGO);
+        const inp = document.createElement('input'); inp.type = 'file'; inp.accept = 'image/*';
+        document.addEventListener('click', e => {
+            const p = e.target.closest('.ph'); if (!p || p.classList.contains('bg')) return; e.preventDefault();
+            inp.onchange = () => {const f = inp.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => {p.style.backgroundImage = `url("${r.result}")`; p.classList.add('has')}; r.readAsDataURL(f); inp.value = ''}; inp.click()
+        });
+        const io = new IntersectionObserver(es => es.forEach(e => {if (e.isIntersecting) {e.target.classList.add('in'); io.unobserve(e.target)} }), {threshold: .12});
+        document.querySelectorAll('.rv').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>
